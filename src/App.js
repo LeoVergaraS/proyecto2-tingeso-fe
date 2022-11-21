@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import Layout from './Layout';
+import Empleados from './pages/Empleados';
+import Inasistencias from './pages/Inasistencias';
+import HorasExtras from './pages/HorasExtras';
+import Atrasos from './pages/Atrasos';
+import IngresosSalidas from './pages/IngresosSalidas';
+import Acordion from './components/Accordion';
+import Upload from './pages/UploadFile';
+import Justificativo from './pages/Justificativo';
+import Autorizar from './pages/Autorizacion';
+import Sueldo from './pages/Sueldo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Container>
+        <Routes>
+          <Route path="/" element={<Acordion />} />
+          <Route path="/inasistencias" element={<Inasistencias />} exact />
+          <Route path="/empleados" element={<Empleados />} exact />
+          <Route path="/horas_extras" element={<HorasExtras />} exact />
+          <Route path="/atrasos" element={<Atrasos />} exact />
+          <Route path="/ingresos_salidas" element={<IngresosSalidas />} exact />
+          <Route path="/archivo" element={<Upload/>} exact />
+          <Route path="/justificar" element={<Justificativo/>} />
+          <Route path="/autorizar" element={<Autorizar/>} />
+          <Route path="/sueldo" element={<Sueldo/>} />
+        </Routes>
+      </Container>
+    </Layout>
   );
 }
 
