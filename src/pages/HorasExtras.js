@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Table } from "react-bootstrap";
+import { Container, Row, Col, Table, Button } from "react-bootstrap";
 
 const HorasExtras = () => {
     const [horasExtras, setHorasExtras] = useState([]);
@@ -25,6 +25,11 @@ const HorasExtras = () => {
         <Container style={{marginTop: '70px'}}> 
             <Row>
                 <Col><h1>Lista de horas extras</h1></Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Button variant="danger" href="/">Volver</Button>
+                </Col>
             </Row>
             <Row>
                 <Col>

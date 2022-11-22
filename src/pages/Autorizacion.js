@@ -80,7 +80,8 @@ const Autorizacion = () => {
                             </Form.Group>
                         </Col>
                         <Col>
-                            <Button variant="primary" onClick={buscarHoraExtras}>Buscar</Button>
+                            <Button style={{marginTop: '30px'}} variant="primary" onClick={buscarHoraExtras}>Buscar</Button>
+                            <Button style={{marginLeft: '5px', marginTop: '30px'}} variant="danger" href="/">Volver</Button>
                         </Col>
                     </Row>
                 </Form>

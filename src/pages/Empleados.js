@@ -65,6 +65,7 @@ const Empleados = () => {
                         <Button variant="primary" onClick={handleShow}>
                             Crear
                         </Button>
+                        <Button style={{marginLeft: '5px'}} variant="danger" href="/">Volver</Button>
                     </Col>
                 </Row>
                 <Row>

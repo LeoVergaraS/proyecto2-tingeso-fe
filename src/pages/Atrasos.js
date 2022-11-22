@@ -1,19 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Table } from "react-bootstrap";
+import { Container, Row, Col, Table, Button } from "react-bootstrap";
 
 const Atrasos = () => {
     const [atrasos, setAtrasos] = useState([]);
 
-    const getAtrasos= async () => {
+    const getAtrasos = async () => {
         try {
             let url = "http://localhost:8080/atrasos";
             const response = await axios.get(url);
-            if(response.status === 200){
+            if (response.status === 200) {
                 setAtrasos(response.data);
                 console.log(response.data)
             }
-        }catch (err) {
+        } catch (err) {
             console.error(err.message);
         }
     };
@@ -23,9 +23,14 @@ const Atrasos = () => {
     }, []);
 
     return (
-        <Container style={{marginTop: '70px'}}> 
+        <Container style={{ marginTop: '70px' }}>
             <Row>
-                <Col><h1>Lista de inasistencias</h1></Col>
+                <Col><h1>Lista de atrasos</h1></Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Button variant="danger" href="/">Volver</Button>
+                </Col>
             </Row>
             <Row>
                 <Col>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Table } from "react-bootstrap";
+import { Container, Row, Col, Table, Button } from "react-bootstrap";
 
 const IngresosSalidas = () => {
     const [ingresosSalidas, setIngresosSalidas] = useState([]);
@@ -9,10 +9,10 @@ const IngresosSalidas = () => {
         try {
             let url = "http://localhost:8080/ingresosSalidas";
             const response = await axios.get(url);
-            if(response.status === 200){
+            if (response.status === 200) {
                 setIngresosSalidas(response.data);
             }
-        }catch (err) {
+        } catch (err) {
             console.error(err.message);
         }
     };
@@ -22,9 +22,14 @@ const IngresosSalidas = () => {
     }, []);
 
     return (
-        <Container style={{marginTop: '70px'}}> 
+        <Container style={{ marginTop: '70px' }}>
             <Row>
                 <Col><h1>Lista de ingresos y salidas</h1></Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Button variant="danger" href="/">Volver</Button>
+                </Col>
             </Row>
             <Row>
                 <Col>

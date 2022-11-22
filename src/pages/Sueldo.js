@@ -56,6 +56,7 @@ const Sueldo = () => {
                         </Col>
                         <Col>
                             <Button variant="primary" onClick={calcularSueldos} className="mt-4">Calcular</Button>
+                            <Button style={{marginLeft: '5px'}} className="mt-4" variant="danger" href="/">Volver</Button>
                         </Col>
                     </Row>
                 </Form>

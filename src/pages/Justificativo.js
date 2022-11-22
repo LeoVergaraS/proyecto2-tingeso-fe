@@ -79,7 +79,8 @@ const Justificativo = () => {
                             </Form.Group>
                         </Col>
                         <Col className="m-10">
-                            <Button variant="primary" onClick={buscarInasistencia}>Buscar</Button>
+                            <Button style={{marginTop: '30px'}} variant="primary" onClick={buscarInasistencia}>Buscar</Button>
+                            <Button style={{marginLeft: '5px', marginTop: '30px'}} variant="danger" href="/">Volver</Button>
                         </Col>
                     </Row>
                 </Form>
@@ -95,6 +96,7 @@ const Justificativo = () => {
                     </Card.Body>
                     <Card.Footer className="text-muted">
                         <Button variant="primary" onClick={handleShow}>Justificar</Button>
+                        
                     </Card.Footer>
                 </Card>
             </Container>
