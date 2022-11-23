@@ -3,6 +3,10 @@ import { useState } from "react";
 import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 
 const Sueldo = () => {
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.jwtToken}` }
+    };    
+
     const [sueldos, setSueldos] = useState([]);
 
     const [buscar, setBuscar] = useState({
@@ -34,7 +38,7 @@ const Sueldo = () => {
         try {
             let fechaSeparada = buscar.fecha.split("-");
             let url = "http://localhost:8080/sueldo/calcular/" + fechaSeparada[1] + "/" + fechaSeparada[0];
-            const response = await axios.get(url);
+            const response = await axios.get(url, config);
             if (response.status === 200) {
                 getSueldos();
             }

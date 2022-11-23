@@ -28,7 +28,7 @@ const Empleados = () => {
 
     const getEmpleados = async () => {
         try {
-            let url = "http://localhost:8080/empleados";
+            let url = "http://localhost:8080/empleados/mostrar";
             const response = await axios.get(url);
             if (response.status === 200) {
                 setEmpleados(response.data);
@@ -40,7 +40,7 @@ const Empleados = () => {
 
     const crearEmpleado = async () => {
         try {
-            let url = "http://localhost:8080/empleados";
+            let url = "http://localhost:8080/empleados/crear";
             const response = await axios.post(url, nuevoEmpleado);
             if (response.status === 200) {
                 window.location.reload();
