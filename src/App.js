@@ -12,6 +12,7 @@ import Upload from './pages/UploadFile';
 import Justificativo from './pages/Justificativo';
 import Autorizar from './pages/Autorizacion';
 import Sueldo from './pages/Sueldo';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/justificar" element={<Justificativo/>} />
           <Route path="/autorizar" element={<Autorizar/>} />
           <Route path="/sueldo" element={<Sueldo/>} />
+          <Route path="/login" element={<Login/>} />
         </Routes>
       </Container>
     </Layout>
