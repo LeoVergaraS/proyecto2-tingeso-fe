@@ -13,6 +13,7 @@ const Upload = () => {
         let url = "http://localhost:8080/atrasos/file";
         axios.post(url)
             .then(response => {
+                alert("Se subio el archivo correctamente");
                 console.log(response);
             })
             .catch(err => {

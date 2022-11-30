@@ -55,7 +55,7 @@ const Autorizacion = () => {
             let url = "http://localhost:8080/horaExtra";
             const response = await axios.post(url, horaExtra);
             if (response.status === 200) {
-                window.location.reload();
+                window.location.href = "/";
             }
         } catch (err) {
             console.error(err.message);

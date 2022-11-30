@@ -4,7 +4,7 @@ import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 
 const Sueldo = () => {
     const config = {
-        headers: { Authorization: `Bearer ${localStorage.jwtToken}` }
+        headers: { Authorization: `Bearer ${localStorage.token}` }
     };    
 
     const [sueldos, setSueldos] = useState([]);
@@ -23,7 +23,7 @@ const Sueldo = () => {
     const getSueldos = async () => {
         try {
             let url = "http://localhost:8080/sueldo/planilla";
-            const response = await axios.get(url);
+            const response = await axios.get(url, config);
             if (response.status === 200) {
                 setSueldos(response.data);
                 console.log(response.data);

@@ -4,6 +4,7 @@ import { BiLogIn, BiLogOut } from "react-icons/bi";
 const Menu = () => {
     const handleLogout = () => {
         localStorage.removeItem("token");
+        window.location.href = "/";
     };
 
     return (

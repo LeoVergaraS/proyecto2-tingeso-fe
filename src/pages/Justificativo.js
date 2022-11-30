@@ -54,7 +54,7 @@ const Justificativo = () => {
             let url = "http://localhost:8080/inasistencia/";
             const response = await axios.post(url, inasistencia);
             if (response.status === 200) {
-                window.location.reload();
+                window.location.href = "/";
             }
         } catch (err) {
             console.error(err.message);
@@ -69,13 +69,13 @@ const Justificativo = () => {
                         <Col>
                             <Form.Group controlId="formBuscar">
                                 <Form.Label>Rut</Form.Label>
-                                <Form.Control type="text" placeholder="Ingrese el rut" name="rut" onChange={handleChange} />
+                                <Form.Control type="text" placeholder="Ingrese el rut" name="rut" onChange={handleChange} required />
                             </Form.Group>
                         </Col>
                         <Col>
                             <Form.Group controlId="formBuscar">
                                 <Form.Label>Fecha</Form.Label>
-                                <Form.Control type="month" placeholder="Ingrese una fecha" name="fecha" min="1950-01" defaultValue={"2022-01"} onChange={handleChange} />
+                                <Form.Control type="month" placeholder="Ingrese una fecha" name="fecha" min="1950-01" defaultValue={"2022-01"} onChange={handleChange} required/>
                             </Form.Group>
                         </Col>
                         <Col className="m-10">
